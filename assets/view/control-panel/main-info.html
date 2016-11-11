@@ -1,0 +1,13 @@
+<div class="main-info">
+    <input class="input" type="text" ng-model="$parent.pTitle" placeholder="Web page title">
+    <input class="input" type="text" ng-model="$parent.hTitle" placeholder="Header title">
+    <div class="buttons">
+        <div class="button"
+             ng-click="$parent.pTitle !== mainInfo.pageTitle && $parent.pTitle || $parent.hTitle !== mainInfo.headerTitle && $parent.hTitle ? changeMainInfo(pTitle, hTitle) : ''"
+             ng-class="$parent.pTitle !== mainInfo.pageTitle && $parent.pTitle || $parent.hTitle !== mainInfo.headerTitle && $parent.hTitle ? '' : 'not-allowed'"
+             tabindex="3">Save</div>
+        <div class="button"
+             ng-click="$parent.pTitle=''; $parent.hTitle=''"
+             tabindex="4">Clear</div>
+    </div>
+</div>

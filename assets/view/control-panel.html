@@ -1,0 +1,28 @@
+<div class="control-panel clearfix">
+    <div class="menu" ng-model="menuItem" ng-init="menuItem = '/view/control-panel/main-info.html'">
+        <ul>
+            <li ng-click="menuItem = '/view/control-panel/main-info.html'">
+                <i class="fa fa-info" aria-hidden="true"></i>&nbsp;Main info
+            </li>
+            <li ng-click="menuItem = '/view/control-panel/about.html'">
+                <i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;About
+            </li>
+            <li ng-click="menuItem = '/view/control-panel/articles.html'">
+                <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;Articles
+            </li>
+            <li ng-click="menuItem = '/view/control-panel/comments.html'">
+                <i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Comments
+            </li>
+            <li ng-click="menuItem = '/view/control-panel/users.html'">
+                <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Users
+            </li>
+            <li ng-click="menuItem = '/view/control-panel/appearance.html'">
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;Appearance
+            </li>
+        </ul>
+    </div>
+    <div class="inner">
+        <div class="dashboard" ng-include="menuItem">
+        </div>
+    </div>
+</div>

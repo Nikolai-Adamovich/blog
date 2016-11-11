@@ -1,0 +1,26 @@
+.control-panel {
+    min-height: 100%;
+    display: flex;
+    .menu {
+        width: 120px;
+        line-height: 30px;
+        color: @basecolor;
+        background: @basebackground;
+        .box-shadow;
+        .no-user-select;
+        .fa {
+            width: 20px;
+        }
+        ul {
+            li {
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .dashboard {
+        width: ~'calc(100% - 120px)';
+    }
+}

@@ -1,0 +1,49 @@
+<div class="inner">
+    <div class="login">
+        <form name="form">
+            <div class="input-block">
+                <input class="input" type="text" ng-model="username" name="username" placeholder="Name" autofocus tabindex="1">
+                <i ng-show="username"
+                   ng-class="username && username.length > 3 ? 'fa fa-check valid' : 'fa fa-close invalid'"></i>
+            </div>
+            <div ng-show="registration" class="input-block">
+                <input class="input" type="email" ng-model="email" ng-pattern="emailFormat" name="email" placeholder="E-mail" tabindex="2">
+                <i ng-show="form.email.$viewValue"
+                   ng-class="form.email.$valid ? 'fa fa-check valid' : 'fa fa-close invalid'"></i>
+            </div>
+            <div class="input-block">
+                <input class="input" type="password" ng-model="password" name="password" placeholder="Password" tabindex="3">
+                <i ng-show="password"
+                   ng-class="password && password.length > 4 ? 'fa fa-check valid' : 'fa fa-close invalid'"></i>
+            </div>
+            <div ng-show="registration" class="input-block">
+                <input class="input" type="password" ng-model="password2" name="password2" placeholder="Confirm password" tabindex="4">
+                <i ng-show="password2"
+                   ng-class="form.password2.$valid && ((password && password2) ? password === password2 : true) ? 'fa fa-check valid' : 'fa fa-close invalid'"></i>
+            </div>
+            <div class="buttons">
+                <div class="button"
+                     ng-show="!registration"
+                     ng-click="username && password && username.length > 3 && password.length > 4 ? login(username, password) : ''"
+                     ng-class="username && password && username.length > 3 && password.length > 4 ? '' : 'not-allowed'"
+                     tabindex="5">Log in</div>
+                <div class="button"
+                     ng-show="registration"
+                     ng-click="username && form.email.$valid && password && password === password2 && username.length > 3 && password.length > 4 ? register(username, email, password) : ''"
+                     ng-class="username && form.email.$valid && password && password === password2 && username.length > 3 && password.length > 4 ? '' : 'not-allowed'"
+                     tabindex="5">Register</div>
+                <div class="button" ng-click="clear()" tabindex="6">Clear form</div>
+            </div>
+            <div class="buttons">
+                <div class="button button-alt"
+                     ng-show="!registration"
+                     ng-click="registration = !registration"
+                     tabindex="7">Registration form</div>
+                <div class="button button-alt"
+                     ng-show="registration"
+                     ng-click="registration = !registration"
+                     tabindex="7">Login form</div>
+            </div>
+        </form>
+    </div>
+</div>

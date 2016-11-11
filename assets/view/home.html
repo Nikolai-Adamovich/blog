@@ -1,0 +1,20 @@
+<div class="inner">
+    <article ng-repeat="post in posts | orderBy: id: true">
+        <header>
+            <h2 ng-bind="post.header"
+                ng-init="minimized[$index] = true"
+                ng-click="minimized[$index] = !minimized[$index]"
+                title="Show full"></h2>
+        </header>
+        <div class="content"
+             ng-bind-html="trustAsHtml(post.article)"
+             ng-class="minimized[$index] ? 'minimized' : ''"></div>
+        <footer class="clearfix">
+            <ul class="clearfix">
+                <li>Author: {{post.author}}</li>
+                <li>Created: {{post.createdAt | date: 'd-M-yyyy, HH:mm'}}</li>
+                <li>Updated: {{post.updatedAt | date: 'd-M-yyyy, HH:mm'}}</li>
+            </ul>
+        </footer>
+    </article>
+</div>

@@ -1,0 +1,4 @@
+##Run application:
+```
+sails lift
+```

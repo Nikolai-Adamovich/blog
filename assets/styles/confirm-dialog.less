@@ -1,0 +1,30 @@
+.confirm-window {
+    .modal-window;
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    button {
+        padding: 10px;
+        color: @basecolor;
+        font-size: 14px;
+        font-weight: bold;
+        &#ok .fa {
+            color: darken(#00f000, 20%);
+        }
+        &#cancel .fa {
+            color: darken(#f00000, 20%);
+        }
+        &:hover {
+            color: #f0f0f0;
+            &#ok .fa {
+                color: #00f000;
+            }
+            &#cancel .fa {
+                color: #f00000;
+            }
+        }
+    }
+    animation: none;
+}

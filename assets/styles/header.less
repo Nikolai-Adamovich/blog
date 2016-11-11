@@ -1,0 +1,86 @@
+@headerHeight: 147px;
+#header {
+    height: @headerHeight;
+    background: @basebackground;
+    .box-shadow;
+    .no-user-select;
+    #menu{
+        border-bottom: 1px solid darken(@basebackground, 10%);
+        font-size: 16px;
+        line-height: 20px;
+        .fa {
+            width: 20px;
+        }
+        ul {
+            &#left {
+                float: left;
+            }
+            &#right {
+                float: right;
+            }
+            li {
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                color: @basecolor;
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+                a {
+                    display: block;
+                    padding: 10px 20px;
+                    &, &:visited {
+                        color: @basecolor;
+                    }
+                    &:hover {
+                        color: #fff;
+                    }
+
+                }
+                input {
+                    border: none;
+                    height: 20px;
+                    vertical-align: middle;
+                }
+                button#search {
+                    width: 25px;
+                    height: 20px;
+                    vertical-align: middle;
+                    position: relative;
+                    color: @basecolor;
+                    i {
+                        position: absolute;
+                        top: -1px;
+                        left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .submenu {
+                    position: absolute;
+                    top: 41px;
+                    left: 0;
+                    text-align: left;
+                    background: @basebackground;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.6);
+                    li {
+                        white-space: nowrap;
+                    }
+                }
+            }
+            button:hover .fa {
+                color: #fff;
+            }
+        }
+    }
+    #title {
+        color: #fff;
+        border-top: 1px solid lighten(@basebackground, 10%);
+        padding: 30px 0;
+        h1 {
+            text-align: center;
+        }
+    }
+}

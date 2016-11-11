@@ -1,0 +1,14 @@
+<div ng-controller="UsersController">
+    <article ng-repeat="user in users | orderBy: id">
+        <header>
+            <h3 ng-bind="user.username"></h3>
+        </header>
+        <ul class="clearfix">
+            <li>ID: {{user.id}}</li>
+            <li>E-mail: {{user.email}}</li>
+            <li>Password: {{user.password}}</li>
+            <li>Created at: {{user.createdAt | date: 'd-M-yyyy, HH:mm'}}</li>
+            <li>Last modified at: {{user.updatedAt | date: 'd-M-yyyy, HH:mm'}}</li>
+        </ul>
+    </article>
+</div>

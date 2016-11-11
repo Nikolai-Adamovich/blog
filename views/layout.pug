@@ -1,0 +1,68 @@
+doctype html
+html(lang="en" ng-app="App" ng-controller="MainController")
+    head
+        title(ng-bind="pageTitle")
+
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+        link(rel="shortcut icon" type="image/png" href="/favicon.png")
+        link(rel="stylesheet" href="/styles/importer.css")
+
+        base(href="/")
+
+    body
+        .blur-container
+            header#header
+                #menu.clearfix
+                    .inner
+                        ul#left
+                            li: a(href="/") Home
+                            li: a(href="/about") About
+                        ul#right
+                            li(ng-show="currentUser.username" ng-cloak)
+                                a(ng-click="show = !show")
+                                    i.fa.fa-user(aria-hidden="true")
+                                    span &nbsp;{{currentUser.username}}
+                                ul(class="submenu" ng-show="show" ng-click="show = !show")
+                                    li
+                                        a(href="/control-panel")
+                                            i.fa.fa-cog.fa-spin(aria-hidden="true")
+                                            span &nbsp;Control panel
+                                    li
+                                        a(ng-click="logout()")
+                                            i.fa.fa-sign-out(aria-hidden="true")
+                                            span &nbsp;Logout
+                            li(ng-show="!currentUser.username")
+                                a(href="/login")
+                                    i.fa.fa-sign-in(aria-hidden="true")
+                                    span &nbsp;Log in
+                            li
+                                input(type="text" placeholder="Search")
+                                button#search(type="submit")
+                                    i.fa.fa-search(aria-hidden="true")
+                #title
+                    .inner
+                        h1(ng-bind="mainInfo.headerTitle")
+            main
+                div(ng-view="").view
+
+        script(src="/vendor/angular/angular.min.js")
+        script(src="/vendor/angular-route/angular-route.min.js")
+        script(src="/vendor/angular-sanitize/angular-sanitize.min.js")
+        script(src="/vendor/tinymce/tinymce.min.js")
+        script(src="/vendor/angular-ui-tinymce/dist/tinymce.min.js")
+        script(src="/js/dependencies/sails.io.js")
+        script(src="/js/app/App.js")
+        script(src="/js/app/controllers/AboutController.js")
+        script(src="/js/app/controllers/HomeController.js")
+        script(src="/js/app/controllers/LoginController.js")
+        script(src="/js/app/controllers/MainController.js")
+        script(src="/js/app/controllers/ControlPanelController.js")
+        script(src="/js/app/controllers/control-panel/ChangeAboutPageController.js")
+        script(src="/js/app/controllers/control-panel/UsersController.js")
+        script(src="/js/app/values/CurrentPageValue.js")
+        script(src="/js/app/factories/AuthenticationFactory.js")
+        script(src="/js/app/factories/CurrentUserFactory.js")
+        script(src="/js/app/factories/MessageFactory.js")
+
