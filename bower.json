@@ -1,12 +1,12 @@
 {
   "name": "blog",
-  "description": "a Sails application",
+  "description": "AngukarJS + Sails.js blog",
   "main": "app.js",
   "authors": [
-    "anonymous node/sails user"
+    "Nikolai Adamovich"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/Nikolai-Adamovich/blog",
   "ignore": [
     "**/.*",
     "node_modules",

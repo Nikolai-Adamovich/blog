@@ -2,7 +2,7 @@
   "name": "blog",
   "private": true,
   "version": "0.0.1",
-  "description": "Blog",
+  "description": "AngukarJS + Sails.js blog",
   "keywords": [],
   "dependencies": {
     "bcryptjs": "^2.3.0",
@@ -25,8 +25,7 @@
     "rc": "1.0.1",
     "sails": "~0.12.6",
     "sails-disk": "^0.10.10",
-    "sails-hook-autoreload": "^0.13.2",
-    "sails-postgresql": "^0.11.4"
+    "sails-hook-autoreload": "^0.13.2"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -35,7 +34,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Nikolai-Adamovich/Blog.git"
+    "url": "https://github.com/Nikolai-Adamovich/blog"
   },
   "author": "Nikolai Adamovich",
   "license": "MIT"
